@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "group:monorepos",
+    "group:recommended",
+    ":dependencyDashboard"
+  ],
+  "timezone": "UTC",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 10
+}
