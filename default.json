@@ -8,5 +8,64 @@
   ],
   "timezone": "UTC",
   "prHourlyLimit": 2,
-  "prConcurrentLimit": 10
+  "prConcurrentLimit": 10,
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": false
+    },
+    {
+      "matchDatasources": [
+        "helm"
+      ],
+      "groupName": "helm charts"
+    },
+    {
+      "matchDatasources": [
+        "go"
+      ],
+      "groupName": "go modules"
+    },
+    {
+      "matchDatasources": [
+        "npm"
+      ],
+      "groupName": "npm packages"
+    },
+    {
+      "matchPackageNames": [
+        "external-dns"
+      ],
+      "enabled": false
+    }
+  ],
+  "helm": {
+    "enabled": true,
+    "fileMatch": [
+      "infra/charts/.+/Chart\\.yaml$"
+    ]
+  },
+  "gomod": {
+    "enabled": true,
+    "fileMatch": [
+      "svelte-backend/go\\.mod"
+    ]
+  },
+  "npm": {
+    "enabled": true,
+    "fileMatch": [
+      "svelte-frontend/package\\.json"
+    ]
+  },
+  "kubernetes": {
+    "enabled": true,
+    "fileMatch": [
+      "infra/.+\\.yaml$"
+    ]
+  }
 }
