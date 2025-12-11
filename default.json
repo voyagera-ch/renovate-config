@@ -36,12 +36,6 @@
         "npm"
       ],
       "groupName": "npm packages"
-    },
-    {
-      "matchPackageNames": [
-        "external-dns"
-      ],
-      "enabled": false
     }
   ],
   "helm": {
